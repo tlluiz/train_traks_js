@@ -1,0 +1,11 @@
+{
+  "name": "trains_tracks",
+  "description": "To find the possible train's tracks",
+  "author": "Thiago L. Luiz <tlluiz@gmail.com>",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "less": "^2.7.3"
+  },
+  "devDependencies": {}
+}
