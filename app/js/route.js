@@ -1,4 +1,6 @@
-function Route(startPoint, endPoint) {
-  this.startPoint = startPoint;
-  this.endPoint = endPoint;
+class Route {
+  constructor(startPoint, endPoint) {
+    this.startPoint = startPoint;
+    this.endPoint = endPoint;
+  }
 }
