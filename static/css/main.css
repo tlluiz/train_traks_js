@@ -6,8 +6,46 @@
   color: #ffffff;
   font-size: 2em;
 }
+.trip-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .trip-form > .labelfield {
   color: #666666;
+  font-size: 1.2em;
+  margin-right: 0.4em;
+}
+.trip-form > .field {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 1.5em;
+  outline: none;
+  padding: 0.3em;
+  color: #666666;
+}
+.trip-form > .action {
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: #FDFDFD;
+  font-size: 1.5em;
+  background-color: #B65252;
+  background: -webkit-gradient(linear, left top, left bottom, from(#B65252), to(#A52A2A));
+  background: -webkit-linear-gradient(top, #B65252, #A52A2A);
+  background: -moz-linear-gradient(top, #B65252, #A52A2A);
+  background: -ms-linear-gradient(top, #B65252, #A52A2A);
+  background: -o-linear-gradient(top, #B65252, #A52A2A);
+  margin-left: 0.9em;
+  padding: 0.3em 0.3em;
 }
 body {
   background-color: #f2f2f2;

@@ -1,10 +1,32 @@
 @primary-color: #666666;
+@secondary-color: #A52A2A;
+@white-color: #FDFDFD;
+
+@mix-button-color: #B65252;
 
 .trip-form  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   > .labelfield {
     color: @primary-color;
+    font-size: 1.2em;
+    margin-right: 0.4em;
   }
   > .field {
+    .border-radius (@radius: 5px);
+    font-size: 1.5em;
+    outline: none;
+    padding: 0.3em;
+    color: @primary-color;
   }
-  > .action {}
+  > .action {
+    border: none;
+    .border-radius (@radius: 5px);
+    color: @white-color;
+    font-size: 1.5em;
+    .horizontal-gradient(@mix-button-color ,@secondary-color);
+    margin-left: 0.9em;
+    padding: 0.3em 0.3em;
+  }
 }
