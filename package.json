@@ -12,6 +12,7 @@
     "babel-cli": "^6.26.0"
   },
   "scripts": {
-    "build": "babel app/js -d static/js"
+    "build:js": "babel app/js -d static/js",
+    "build:css": "lessc --glob app/css/main.less static/css/main.css"
   }
 }
