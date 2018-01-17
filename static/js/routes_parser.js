@@ -9,8 +9,6 @@ class RoutesParser {
       if (points[next_index] == null) {
         continue;
       }
-      console.log("Index: " + index + " StartPoint: " + points[index]);
-      console.log("Index: " + next_index + " EndPoint:" + points[next_index]);
       routes.push(new Route(points[index], points[next_index]));
     }
 
