@@ -12,11 +12,16 @@
       <h2 class="subtitle">v1.0</h2>
     </header>
     <main class="container-main">
-      <form action="" class="trip-form">
+      <form action="" method="post" class="trip-form">
         <label for="trip" class="labelfield">Insira um percurso:</label>
         <input type="text" name="trip" class="field"/>
+        <input type="text" name="stringTracks" value='AB5,BC4,CD8,DC8,DE6,AD5,CE2,EB3,AE7' hidden>
         <input type="submit" class="action" value="Enviar">
       </form>
+
+      <div class="trip-result" hidden>
+        foo
+      </div>
     </main>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js" ></script>
     <script type="text/javascript" src="js/modules/train_tracks/possible_trips.js" ></script>
