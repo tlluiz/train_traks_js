@@ -1,10 +1,10 @@
 class PossibleTrips {
   constructor(startPoint, endPoint, minStops = 0, maxStops = 0, trackFinder) {
-    this.start_point = startPoint;
-    this.end_point = endPoint;
-    this.min_stops = minStops;
-    this.max_stops = maxStops;
-    this.track_finder = trackFinder;
+    this.startPoint = startPoint;
+    this.endPoint = endPoint;
+    this.minStops = minStops;
+    this.maxStops = maxStops;
+    this.trackFinder = trackFinder;
   }
 
   reducer() {
@@ -12,21 +12,21 @@ class PossibleTrips {
   }
 
   countTrips() {
-    search();
-    correctTrips = trips.filter(trip => trip.endPoint == endPoint);
+    this.search();
+    var correctTrips = this.trips.filter(trip => trip.endPoint == this.endPoint);
     return correctTrips.length;
   }
 
   distanceOfTrips() {
     search();
 
-    return trips.filter(trip => trip.endPoint == endPoint)
-                .sort(compare(a,b))[0].map(trip => trip.distance).reduce(reducer);
+    return this.trips.filter(trip => trip.endPoint == this.endPoint)
+                .sort(compare(a,b))[0].map(trip => trip.distance).reduce(this.reducer);
   }
 
   compare(a,b) {
-    var aDistance = a.map(a => a.distance).reduce(reducer);
-    var bDistance = b.map(b => b.distance).reduce(reducer);
+    var aDistance = a.map(a => a.distance).reduce(this.reducer);
+    var bDistance = b.map(b => b.distance).reduce(this.reducer);
     if (aDistance < bDistance) {
       return -1;
     } else if (aDistance > bDistance) {
@@ -41,27 +41,27 @@ class PossibleTrips {
     this.trips = {};
 
     do {
-      if(possibleStartTracks.length == 0) break;
-      trackAroundTheWay(possibleStartTracks);
+      if(this.possibleStartTracks.length == 0) break;
+      this.trackAroundTheWay(this.possibleStartTracks);
     } while(minStops < maxStops);
   }
 
   trackAroundTheWay(tracks) {
-    traks.forEach(function(track) {
-      trips[tripNumber] = [track];
+    tracks.forEach(function(track) {
+      this.trips[tripNumber] = [track];
       do {
-        currentTrack = trips[tripNumber][trips[tripNumber].length - 1];
+        var currentTrack = this.trips[tripNumber][this.trips[tripNumber].length - 1];
         if(!minStop < maxStop) { currentTrack.increaseTrip };
-        nextTrack = possibleStartTracks(currentTrack.endPoint)[0];
+        var nextTrack = possibleStartTracks(currentTrack.endPoint)[0];
 
         if(nextTrack == null) { break };
 
-        trips[tripNumber].push(nextTrack);
+        this.trips[tripNumber].push(nextTrack);
 
         if(minStops < maxStops || minStops == 0 || minStips > maxStops) {
-          if(lazyStopCondition(trips[tripNumber])) { break };
+          if(this.lazyStopCondition(this.trips[tripNumber])) { break };
         } else {
-          if(exactlyMaxStopsCondition(trips[tripNumber])) { break };
+          if(this.exactlyMaxStopsCondition(this.trips[tripNumber])) { break };
         }
       } while(1 == 1);
     });
@@ -73,11 +73,11 @@ class PossibleTrips {
   }
 
   lazyStopCondition(trip) {
-    return trip[trip.length - 1].endPoint == endPoint;
+    return trip[trip.length - 1].endPoint == this.endPoint;
   }
 
   possibleStartTracks(point = null) {
-    return this.trackFinder.findByPoint(point || startPoint)
+    return this.trackFinder.findByPoint(point || this.startPoint)
                            .filter(track => track.trips < track.possibleTrips);
   }
 }
